@@ -60,4 +60,4 @@ belongs_to :user
 | buy_id         | integer | foreign_key: true    |
 
 ### Association
-belongs_to :buys
+belongs_to :buy
