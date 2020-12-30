@@ -54,7 +54,7 @@ belongs_to :user
 | postal_code    | string  | null: false          |
 | area_id        | integer | null: false          |
 | municipalities | string  | null: false          |
-| number         | integer | null: false          |
+| number         | string  | null: false          |
 | building       | string  |                      |
 | tel            | string  | null: false          |
 | buy_id         | integer | foreign_key: true    |
