@@ -26,8 +26,8 @@ has_many :buys
 | quality_id       | integer | null: false      |
 | price            | integer | null: false      |
 | shipping_id      | integer | null: false      |
-| area_id          | string  | null: false      |
-| Shipping_day_id  | integer | null: false      |
+| area_id          | integer | null: false      |
+| shipping_day_id  | integer | null: false      |
 | user_id          | integer | foreign_key: true|
 
 ### Association
@@ -44,19 +44,20 @@ has_one :buy
 
 ### Association
 has_one : address
-belongs_to :Item
+belongs_to :item
 belongs_to :user
 
 ## Addresss テーブル
 
 | Column         | Type    | Options              |
 | -------------- | ------- | -------------------- |
-| postal_code    | integer | null: false          |
-| prefectures    | string  | null: false          |
+| postal_code    | string  | null: false          |
+| area_id        | integer | null: false          |
 | municipalities | string  | null: false          |
 | number         | integer | null: false          |
 | building       | string  |                      |
-| tel            | integer | null: false          |
+| tel            | string  | null: false          |
+| buy_id         | integer | foreign_key: true    |
 
 ### Association
 belongs_to :buys
