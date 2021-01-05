@@ -3,8 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :nickname, presence: true
-    validates :birthday, presence: true
+    validates :nickname
+    validates :birthday
   end
 
 
