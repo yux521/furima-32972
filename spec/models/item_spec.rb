@@ -28,12 +28,12 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors.full_messages).to include("Price can't be blank")
         end
-        it 'priceが数字でないと保存できないこと' do
+        it 'priceが数字でないと登録できないこと' do
           @item.price = "waaaczv"
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not a number")
         end
-        it 'priceが全角文字では保存できないこと' do
+        it 'priceが全角文字では登録できないこと' do
           @item.price = "こんにちは"
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not a number")
@@ -83,7 +83,7 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors.full_messages).to include("Shipping day must be other than 1")
         end
-        it 'userが紐付いていないと保存できないこと' do
+        it 'userが紐付いていないと登録できないこと' do
           @item.user = nil
           @item.valid?
           expect(@item.errors.full_messages).to include("User must exist")
