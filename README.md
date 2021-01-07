@@ -18,17 +18,17 @@ has_many :buys
 
 ## Items テーブル
 
-| Column           | Type    | Options          |
-| ---------------- | ------- | ---------------- |
-| item             | string  | null: false      |
-| explanation      | text    | null: false      |
-| category_id      | integer | null: false      |
-| quality_id       | integer | null: false      |
-| price            | integer | null: false      |
-| shipping_id      | integer | null: false      |
-| area_id          | integer | null: false      |
-| shipping_day_id  | integer | null: false      |
-| user_id          | integer | foreign_key: true|
+| Column           | Type        | Options          |
+| ---------------- | ----------- | ---------------- |
+| name             | string      | null: false      |
+| explanation      | text        | null: false      |
+| category_id      | integer     | null: false      |
+| quality_id       | integer     | null: false      |
+| price            | integer     | null: false      |
+| shipping_id      | integer     | null: false      |
+| area_id          | integer     | null: false      |
+| shipping_day_id  | integer     | null: false      |
+| user             | references  | foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -36,10 +36,10 @@ has_one :buy
 
 ## Buys テーブル
 
-| Column        | Type    | Options              |
-| ------------- | ------- | -------------------- |
-| user_id       | integer | foreign_key: true    |
-| items_id      | integer | foreign_key: true    |
+| Column    | Type        | Options              |
+| --------- | ----------- | -------------------- |
+| user      | references  | foreign_key: true    |
+| items     | references  | foreign_key: true    |
 
 
 ### Association
@@ -49,15 +49,15 @@ belongs_to :user
 
 ## Addresss テーブル
 
-| Column         | Type    | Options              |
-| -------------- | ------- | -------------------- |
-| postal_code    | string  | null: false          |
-| area_id        | integer | null: false          |
-| municipalities | string  | null: false          |
-| number         | string  | null: false          |
-| building       | string  |                      |
-| tel            | string  | null: false          |
-| buy_id         | integer | foreign_key: true    |
+| Column         | Type       | Options              |
+| -------------- | ---------- | -------------------- |
+| postal_code    | string     | null: false          |
+| area_id        | integer    | null: false          |
+| municipalities | string     | null: false          |
+| number         | string     | null: false          |
+| building       | string     |                      |
+| tel            | string     | null: false          |
+| buy            | references | foreign_key: true    |
 
 ### Association
 belongs_to :buy
