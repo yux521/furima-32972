@@ -20,7 +20,7 @@ has_many :buys
 
 | Column           | Type        | Options          |
 | ---------------- | ----------- | ---------------- |
-| item             | string      | null: false      |
+| name             | string      | null: false      |
 | explanation      | text        | null: false      |
 | category_id      | integer     | null: false      |
 | quality_id       | integer     | null: false      |
