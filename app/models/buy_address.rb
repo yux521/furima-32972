@@ -1,7 +1,7 @@
 class BuyAddress < ActiveHash::Base
   include ActiveModel::Model
-  attr_accessor :postal_code, :area_id, :municipalities, :number, :building, :tel, :item_id, :user_id
-
+  attr_accessor :postal_code, :area_id, :municipalities, :number, :building, :tel, :item_id, :user_id, :token
+  
 
   # バリデーション
   with_options presence: true do
@@ -13,6 +13,8 @@ class BuyAddress < ActiveHash::Base
     validates :number
     # 電話番号(ハイフンなし11桁以下)
     validates :tel, format: { with: /\A\d{,11}\z/ }
+    # トークン
+    validates :token, presence: true
   end
     # 都道府県
     validates :area_id, numericality: { other_than: 1 }

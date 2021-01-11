@@ -5,5 +5,6 @@ FactoryBot.define do
     number         {"3丁目12番1号"}
     tel            {"00000000000"}
     area_id        {2}
+    token          {"tok_abcdefghijk00000000000000000"}
   end
 end
