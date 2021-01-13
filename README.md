@@ -39,7 +39,7 @@ has_one :buy
 | Column    | Type        | Options              |
 | --------- | ----------- | -------------------- |
 | user      | references  | foreign_key: true    |
-| items     | references  | foreign_key: true    |
+| item      | references  | foreign_key: true    |
 
 
 ### Association

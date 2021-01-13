@@ -23,7 +23,9 @@ class Item < ApplicationRecord
 
   #アソシエーション
   belongs_to :user
+  has_one :buy
   has_one_attached :image
+
   #ActiveHashアソシエーション
   belongs_to :category
   belongs_to :quality
