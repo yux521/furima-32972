@@ -13,8 +13,10 @@ class BuyAddress < ActiveHash::Base
     validates :number
     # 電話番号(ハイフンなし11桁以下)
     validates :tel, format: { with: /\A\d{,11}\z/ }
+    validates :user_id
+    validates :item_id
     # トークン
-    validates :token, presence: true
+    validates :token
   end
     # 都道府県
     validates :area_id, numericality: { other_than: 1 }

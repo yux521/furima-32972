@@ -5,11 +5,15 @@ RSpec.describe BuyAddress, type: :model do
     before do
       @buy_address= FactoryBot.build(:buy_address)
     end
-  
+    
     describe '商品購入履歴登録' do
       context '購入履歴の登録がうまくいくとき' do
         it "全ての値が存在すれば登録できる" do
           expect( @buy_address ).to be_valid
+        end
+        it "buildingが空でも登録できる" do
+          @buy_address.building= ""
+          expect(@buy_address).to be_valid
         end
       end
 
@@ -73,6 +77,16 @@ RSpec.describe BuyAddress, type: :model do
           @buy_address.area_id = 1
           @buy_address.valid?
           expect(@buy_address.errors.full_messages).to include("Area must be other than 1")
+        end
+        it "item_idが空では登録できないこと" do
+          @buy_address.item_id = nil
+          @buy_address.valid?
+          expect(@buy_address.errors.full_messages).to include("Item can't be blank")
+        end
+        it "user_idが空では登録できないこと" do
+          @buy_address.user_id = nil
+          @buy_address.valid?
+          expect(@buy_address.errors.full_messages).to include("User can't be blank")
         end
         it "tokenが空では登録できないこと" do
           @buy_address.token = nil
